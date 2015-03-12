@@ -26,5 +26,15 @@
 
 	});
 
+	app.constant('TDParameters', {
+		SideMenuItems: [
+			{ text: 'Home', icon: 'home' },
+			{ text: 'TechNews', icon: 'info' },
+			{ text: 'eLearning', icon: 'laptop' },
+		]
+
+	});
+
+
 
 })();

@@ -2,8 +2,8 @@ html, body {
   font-family: 'Roboto', sans-serif;
   font-size:14px;
   height:100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Toolbar area */
@@ -33,7 +33,7 @@ md-list .md-button {
   }
 
   md-sidenav  md-list {
-    padding: 0px 0px 8px 0px;
+    padding: 0 0 8px 0;
   }
 
 
@@ -77,10 +77,13 @@ md-button.menuBtn > md-icon {
 }
 
 #content .md-button.share:active > md-icon {
-  background-color: #dadada;
-  border-radius: 75%;
-  padding:4px;
-  transition: all 100ms ease-out 30ms;
+    background-color: #dadada;
+    border-radius: 75%;
+    padding: 4px;
+    -moz-transition: all 100ms ease-out 30ms;
+    -o-transition: all 100ms ease-out 30ms;
+    -webkit-transition: all 100ms ease-out 30ms;
+    transition: all 100ms ease-out 30ms;
 }
 
 #content img {
@@ -103,19 +106,21 @@ md-toolbar h1 {
 }
 
 .avatar {
-  position: relative;
-  width: 128px;
-  height: 128px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  display: inline-block;
-  overflow: hidden;
-  margin: 0px;
-  vertical-align: middle;
-  zoom:0.70;
-  transform: translateZ(0);
-  -webkit-transform: scale(0.70);
-  -moz-transform:scale(0.70);
+    position: relative;
+    width: 128px;
+    height: 128px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    vertical-align: middle;
+    zoom: 0.70;
+    -webkit-transform: scale(0.70);
+    -moz-transform: scale(0.70);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 
@@ -134,7 +139,7 @@ span.name {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin: 0px;
+    margin: 0;
     vertical-align: middle;
     -webkit-transform: scale(0.70);
     -moz-transform: scale(0.70);
