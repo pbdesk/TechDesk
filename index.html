@@ -47,9 +47,9 @@
             <md-button class="md-primary">Click me</md-button>
             <md-button class="md-primary md-hue-1">Click me</md-button>
             <md-button class="md-primary md-hue-2">Click me</md-button>
-            <ng-md-icon icon="send" style="fill: #abcdef" size="24"></ng-md-icon> 
-                <ng-md-icon icon="dashboard" style="fill: blue" size="28"></ng-md-icon> 
-                <ng-md-icon icon="cloud" style="fill: red" size="64"></ng-md-icon> 
+                <ng-md-icon icon="send" ng-attr-style="fill: #abcdef" style="fill: #abcdef" size="24"></ng-md-icon> 
+                <ng-md-icon icon="dashboard" ng-attr-style="fill: blue" style="fill: blue" size="28"></ng-md-icon> 
+                <ng-md-icon icon="cloud"  style="fill: red" size="64"></ng-md-icon> 
             </div>
           <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
             <md-icon md-svg-icon="share"></md-icon>
@@ -64,6 +64,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
 
       <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
+      
 
       <script src="ngApps/libs/3P/angular-ui-router/angular-ui-router.min.js"></script>
       <script src="ngApps/libs/3P/angular-cache/angular-cache.min.js"></script>
