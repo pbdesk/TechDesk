@@ -10,102 +10,103 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.css" />
+    <link href="ngApps/libs/3P/angular-loading-bar/loading-bar.min.css" rel="stylesheet" />
     <link href="assets/css/techdesk.css" rel="stylesheet" />
-      <script src="assets/js/TechDesk.Config.js"></script>
+    <script src="assets/js/TechDesk.Config.js"></script>
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
+<body ng-app="PBDesk.TechDesk.App" layout="column" ng-controller="UsersListController as ul">
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
-        <md-icon md-svg-icon="menu" ></md-icon>
-      </md-button>
-      <h1>TechDesk</h1>
+        <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+            <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h1>TechDesk</h1>
     </md-toolbar>
 
     <div flex layout="row">
 
         <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
-          <md-list>
-            <md-item ng-repeat="it in ul.users">
-                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-                  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-                  {{it.name}}
-                </md-button>
-            </md-item>
-          </md-list>
+            <md-list>
+                <md-item>
+                    <md-button class="md-primary">
+                        <ng-md-icon icon="home" size="40" class="sidemenuicon"></ng-md-icon>
+                        Home
+                    </md-button>
+                </md-item>
+                <md-item>
+                    <md-button class="md-primary">
+                        <ng-md-icon icon="info" size="40" class="sidemenuicon"></ng-md-icon>
+                        TechNews
+                    </md-button>
+                </md-item>
+                <md-item>
+                    <md-button class="md-primary">
+                        <ng-md-icon icon="laptop" size="40" class="sidemenuicon"></ng-md-icon>
+                        eLearning
+                    </md-button>
+                </md-item>
+                <md-item ng-repeat="it in ul.users">
+                    <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                        <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+                        {{it.name}}
+                    </md-button>
+                </md-item>
+            </md-list>
         </md-sidenav>
 
         <md-content flex id="content">
-          <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-          <h2>{{ul.selected.name}}</h2>
-          <p>{{ul.selected.content}}</p>
+            <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+            <h2>{{ul.selected.name}}</h2>
+            <p>{{ul.selected.content}}</p>
             <div>
                 <md-button class="md-raised md-primary">Click me</md-button>
-            <md-button class="md-accent">or maybe me</md-button>
-            <md-button class="md-warn">Careful</md-button>
-            <md-button class="md-primary">Click me</md-button>
-            <md-button class="md-primary md-hue-1">Click me</md-button>
-            <md-button class="md-primary md-hue-2">Click me</md-button>
-                <ng-md-icon icon="send" ng-attr-style="fill: #abcdef" style="fill: #abcdef" size="24"></ng-md-icon> 
-                <ng-md-icon icon="dashboard" ng-attr-style="fill: blue" style="fill: blue" size="28"></ng-md-icon> 
-                <ng-md-icon icon="cloud"  style="fill: red" size="64"></ng-md-icon> 
+                <md-button class="md-accent">or maybe me</md-button>
+                <md-button class="md-warn">Careful</md-button>
+                <md-button class="md-primary">Click me</md-button>
+                <md-button class="md-primary md-hue-1">Click me</md-button>
+                <md-button class="md-primary md-hue-2">Click me</md-button>
+                <ng-md-icon icon="send" ng-attr-style="fill: #abcdef" style="fill: #abcdef" size="24"></ng-md-icon>
+                <ng-md-icon icon="dashboard" ng-attr-style="fill: blue" style="fill: blue" size="28"></ng-md-icon>
+                <ng-md-icon icon="cloud" style="fill: red" size="64"></ng-md-icon>
             </div>
-          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
-            <md-icon md-svg-icon="share"></md-icon>
-          </md-button>
+            <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+                <md-icon md-svg-icon="share"></md-icon>
+            </md-button>
         </md-content>
 
     </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.min.js"></script>   
-      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
 
-      <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
-      
+    <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
 
-      <script src="ngApps/libs/3P/angular-ui-router/angular-ui-router.min.js"></script>
-      <script src="ngApps/libs/3P/angular-cache/angular-cache.min.js"></script>
-      <script src="ngApps/libs/3P/angular-loading-bar/loading-bar.min.js"></script>
 
-      <script src="ngApps/libs/my/logger/Logger.js"></script>
-      <script src="ngApps/libs/my/Exception/Exception.js"></script>
-      <script src="ngApps/libs/my/Exception/Exception.Handler.provider.js"></script>
+    <script src="ngApps/libs/3P/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="ngApps/libs/3P/angular-cache/angular-cache.min.js"></script>
+    <script src="ngApps/libs/3P/angular-loading-bar/loading-bar.min.js"></script>
 
-      <script src="ngApps/Core/TechDesk.Core.module.js"></script>
-      <script src="ngApps/Core/TechDesk.Core.config.js"></script>
+    <script src="ngApps/libs/my/logger/Logger.js"></script>
+    <script src="ngApps/libs/my/Exception/Exception.js"></script>
+    <script src="ngApps/libs/my/Exception/Exception.Handler.provider.js"></script>
+
+    <script src="ngApps/Core/TechDesk.Core.module.js"></script>
+    <script src="ngApps/Core/TechDesk.Core.config.js"></script>
 
 
     <script src="./ngApps/users/Users.js"></script>
     <script src="./ngApps/users/UsersListController.js"></script>
     <script src="./ngApps/users/UsersDataservice.js"></script>
 
+   
+    <script src="ngApps/TechDesk/TechDesk.module.js"></script>
+    <script src="ngApps/TechDesk/TechDesk.config.js"></script>
 
 
-    <script type="text/javascript">
 
-          angular
-              .module('starterApp', ['PBDesk.TechDesk.Core', 'users'])
-              .config(function($mdThemingProvider, $mdIconProvider){
+</body>
 
-                  $mdIconProvider
-                      .defaultIconSet("./assets/svg/avatars.svg", 128)
-                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
-                      .icon("share"      , "./assets/svg/share.svg"       , 24)
-                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
-                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
-                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
-                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
-
-                      $mdThemingProvider.theme('default')
-                          .primaryPalette('blue')
-                          .accentPalette('orange');
-
-              });
-
-    </script>
-
-  </body>
 </html>

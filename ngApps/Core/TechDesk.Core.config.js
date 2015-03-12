@@ -5,7 +5,7 @@
 
 	//var appUrl = window.c9Configs.appUrl;
 	//var idSysUrl = window.c9Configs.idSysUrl;
-	coreApp.constant('AppSettings', {
+	coreApp.constant('CoreSettings', {
 	    ////apiServiceBaseUrl: idSysUrl + 'IdSys/api/',
 		////clientBaseUrl: appUrl,
 		////clientId: window.c9Configs.clientId,
