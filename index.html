@@ -65,14 +65,28 @@
 
       <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
 
+      <script src="ngApps/libs/3P/angular-ui-router/angular-ui-router.min.js"></script>
+      <script src="ngApps/libs/3P/angular-cache/angular-cache.min.js"></script>
+      <script src="ngApps/libs/3P/angular-loading-bar/loading-bar.min.js"></script>
+
+      <script src="ngApps/libs/my/logger/Logger.js"></script>
+      <script src="ngApps/libs/my/Exception/Exception.js"></script>
+      <script src="ngApps/libs/my/Exception/Exception.Handler.provider.js"></script>
+
+      <script src="ngApps/Core/TechDesk.Core.module.js"></script>
+      <script src="ngApps/Core/TechDesk.Core.config.js"></script>
+
+
     <script src="./ngApps/users/Users.js"></script>
     <script src="./ngApps/users/UsersListController.js"></script>
     <script src="./ngApps/users/UsersDataservice.js"></script>
 
+
+
     <script type="text/javascript">
 
           angular
-              .module('starterApp', ['ngMaterial', 'users', 'ngMdIcons'])
+              .module('starterApp', ['PBDesk.TechDesk.Core', 'users'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
