@@ -8,13 +8,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.css">
-    <link href="assets/css/techdesk.css" rel="stylesheet" />
-    
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.css" />
+    <link rel="stylesheet" href="assets/app.css"/>
   </head>
 
-  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul">
+  <body ng-app="starterApp" layout="column" ng-controller="UsersListController as ul">
 
     <md-toolbar layout="row">
       <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
@@ -25,7 +24,7 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+        <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
           <md-list>
             <md-item ng-repeat="it in ul.users">
                 <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
@@ -40,7 +39,14 @@
           <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
           <h2>{{ul.selected.name}}</h2>
           <p>{{ul.selected.content}}</p>
-
+            <div>
+                <md-button class="md-raised md-primary">Click me</md-button>
+            <md-button class="md-accent">or maybe me</md-button>
+            <md-button class="md-warn">Careful</md-button>
+            <md-button class="md-primary">Click me</md-button>
+            <md-button class="md-primary md-hue-1">Click me</md-button>
+            <md-button class="md-primary md-hue-2">Click me</md-button>
+            </div>
           <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
             <md-icon md-svg-icon="share"></md-icon>
           </md-button>
@@ -48,14 +54,14 @@
 
     </div>
 
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.min.js"></script>    
-      <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.min.js"></script>   
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
 
     <script src="./ngApps/users/Users.js"></script>
-    <script src="./ngApps/users/UserController.js"></script>
-    <script src="./ngApps/users/UserService.js"></script>
+    <script src="./ngApps/users/UsersListController.js"></script>
+    <script src="./ngApps/users/UsersDataservice.js"></script>
 
     <script type="text/javascript">
 
@@ -73,7 +79,7 @@
                       .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
                       $mdThemingProvider.theme('default')
-                          .primaryPalette('indigo')
+                          .primaryPalette('blue')
                           .accentPalette('orange');
 
               });

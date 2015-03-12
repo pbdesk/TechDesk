@@ -2,9 +2,9 @@
 
   angular
        .module('users')
-       .controller('UserController', [
-          'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',
-          UserController
+       .controller('UsersListController', [
+          'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
+          UsersListController
        ]);
 
   /**
@@ -14,7 +14,7 @@
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $q) {
+  function UsersListController( usersService, $mdSidenav, $mdBottomSheet, $log ) {
     var self = this;
 
     self.selected     = null;
@@ -25,8 +25,8 @@
 
     // Load all registered users
 
-    userService
-          .loadAllUsers()
+    usersService
+          .loadAll()
           .then( function( users ) {
             self.users    = [].concat(users);
             self.selected = users[0];
@@ -37,15 +37,10 @@
     // *********************************
 
     /**
-     * First hide the bottomsheet IF visible, then
-     * hide or Show the 'left' sideNav area
+     * Hide or Show the 'left' sideNav area
      */
     function toggleUsersList() {
-      var pending = $mdBottomSheet.hide() || $q.when(true);
-
-      pending.then(function(){
-        $mdSidenav('left').toggle();
-      });
+      $mdSidenav('left').toggle();
     }
 
     /**
@@ -65,13 +60,13 @@
 
         $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
-          templateUrl: '/ngApps/users/view/contactSheet.html',
+          templateUrl: './ngApps/users/view/contactSheet.html',
           controller: [ '$mdBottomSheet', UserSheetController],
           controllerAs: "vm",
           bindToController : true,
           targetEvent: $event
         }).then(function(clickedItem) {
-          clickedItem && $log.debug( clickedItem.name + ' clicked!');
+          $log.debug( clickedItem.name + ' clicked!');
         });
 
         /**
@@ -80,10 +75,10 @@
         function UserSheetController( $mdBottomSheet ) {
           this.user = user;
           this.items = [
-            { name: 'Phone'       , icon: 'phone'       , icon_url: 'assets/svg/phone.svg'},
-            { name: 'Twitter'     , icon: 'twitter'     , icon_url: 'assets/svg/twitter.svg'},
-            { name: 'Google+'     , icon: 'google_plus' , icon_url: 'assets/svg/google_plus.svg'},
-            { name: 'Hangout'     , icon: 'hangouts'    , icon_url: 'assets/svg/hangouts.svg'}
+            { name: 'Phone'       , icon: 'phone'       },
+            { name: 'Twitter'     , icon: 'twitter'     },
+            { name: 'Google+'     , icon: 'google_plus' },
+            { name: 'Hangout'     , icon: 'hangouts'    }
           ];
           this.performAction = function(action) {
             $mdBottomSheet.hide(action);

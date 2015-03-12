@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('users')
-         .service('userService', ['$q', UserService]);
+         .service('usersService', ['$q', UsersDataservice]);
 
   /**
    * Users DataService
@@ -12,7 +12,7 @@
    * @returns {{loadAll: Function}}
    * @constructor
    */
-  function UserService($q){
+  function UsersDataservice($q){
     var users = [
       {
         name: 'Lia Lugo',
@@ -27,7 +27,7 @@
       {
         name: 'Gener Delosreyes',
         avatar: 'svg-3',
-        content: "Raw denim pour-over readymade Etsy Pitchfork. Four dollar toast pickled locavore bitters McSweeney's blog. Try-hard art party Shoreditch selfies. Odd Future butcher VHS, disrupt pop-up Thundercats chillwave vinyl jean shorts taxidermy master cleanse letterpress Wes Anderson mustache Helvetica. Schlitz bicycle rights chillwave irony lumberhungry Kickstarter next level sriracha typewriter Intelligentsia, migas kogi heirloom tousled. Disrupt 3 wolf moon lomo four loko. Pug mlkshk fanny pack literally hoodie bespoke, put a bird on it Marfa messenger bag kogi VHS."
+        content: "Raw denim pour-over readymade Etsy Pitchfork. Four dollar toast pickled locavore bitters McSweeney's blog. Try-hard art party Shoreditch selfies. Odd Future butcher VHS, disrupt pop-up Thundercats chillwave vinyl jean shorts taxidermy master cleanse letterpress Wes Anderson mustache Helvetica. Schlitz bicycle rights chillwave irony lumbersexual Kickstarter next level sriracha typewriter Intelligentsia, migas kogi heirloom tousled. Disrupt 3 wolf moon lomo four loko. Pug mlkshk fanny pack literally hoodie bespoke, put a bird on it Marfa messenger bag kogi VHS."
       },
       {
         name: 'Lawrence Ray',
@@ -48,7 +48,7 @@
 
     // Promise-based API
     return {
-      loadAllUsers : function() {
+      loadAll : function() {
         // Simulate async nature of real remote calls
         return $q.when(users);
       }
