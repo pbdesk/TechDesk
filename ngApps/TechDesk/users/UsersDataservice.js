@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('users')
+    angular.module('PBDesk.TechDesk.App')
          .service('usersService', ['$q', UsersDataservice]);
 
   /**

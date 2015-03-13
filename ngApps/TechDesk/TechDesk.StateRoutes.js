@@ -24,10 +24,17 @@
 		})
 		.state('eLearning', {
 
-		    url: '/eLearning',
-		    templateUrl: viewPath + "eLearning/index.html"
+			url: '/eLearning',
+			templateUrl: viewPath + "eLearning/index.html"
 			//controller: 'importController',
 			//controllerAs: 'vm'
+		})
+		.state('demo', {
+
+			url: '/demo',
+			templateUrl: viewPath + "users/index.html",
+			controller: 'UsersListController',
+			controllerAs: 'ul'
 		});
 
 	}

@@ -15,10 +15,10 @@
     <script src="assets/js/TechDesk.Config.js"></script>
   </head>
 
-<body ng-app="PBDesk.TechDesk.App" layout="column" ng-controller="UsersListController as ul">
+<body ng-app="PBDesk.TechDesk.App" layout="column" ng-controller="rootController as VM">
 
     <md-toolbar layout="row">
-        <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-button class="menu" hide-gt-sm ng-click="VM.toggleLeftMainSidebar()" aria-label="Show User List">
             <md-icon md-svg-icon="menu"></md-icon>
         </md-button>
         <h1>TechDesk</h1>
@@ -26,7 +26,7 @@
 
     <div flex layout="row">
 
-        <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+        <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="leftMain">
             <md-list>
                 <md-item>
                     <md-button class="md-primary" ui-sref="Home">
@@ -46,34 +46,14 @@
                         eLearning
                     </md-button>
                 </md-item>
-                <md-item ng-repeat="it in ul.users">
-                    <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-                        <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-                        {{it.name}}
-                    </md-button>
-                </md-item>
+
             </md-list>
         </md-sidenav>
 
-        <md-content flex id="content">
-            <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-            <h2>{{ul.selected.name}}</h2>
-            <p>{{ul.selected.content}}</p>
-            <div>
-                <md-button class="md-raised md-primary">Click me</md-button>
-                <md-button class="md-accent">or maybe me</md-button>
-                <md-button class="md-warn">Careful</md-button>
-                <md-button class="md-primary">Click me</md-button>
-                <md-button class="md-primary md-hue-1">Click me</md-button>
-                <md-button class="md-primary md-hue-2">Click me</md-button>
-                <ng-md-icon icon="send" ng-attr-style="fill: #abcdef" style="fill: #abcdef" size="24"></ng-md-icon>
-                <ng-md-icon icon="dashboard" ng-attr-style="fill: blue" style="fill: blue" size="28"></ng-md-icon>
-                <ng-md-icon icon="cloud" style="fill: red" size="64"></ng-md-icon>
-            </div>
+        <md-content flex id="content1">
+
             <div ui-view></div>
-            <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
-                <md-icon md-svg-icon="share"></md-icon>
-            </md-button>
+
         </md-content>
 
     </div>
@@ -99,17 +79,18 @@
 
     <script src="ngApps/Core/TechDesk.Core.module.js"></script>
     <script src="ngApps/Core/TechDesk.Core.config.js"></script>
+    
 
 
-    <script src="./ngApps/users/Users.js"></script>
-    <script src="./ngApps/users/UsersListController.js"></script>
-    <script src="./ngApps/users/UsersDataservice.js"></script>
 
-   
+
     <script src="ngApps/TechDesk/TechDesk.module.js"></script>
     <script src="ngApps/TechDesk/TechDesk.config.js"></script>
     <script src="ngApps/TechDesk/TechDesk.StateRoutes.js"></script>
+    <script src="ngApps/TechDesk/TechDesk.RootController.js"></script>
 
+    <script src="ngApps/TechDesk/users/UsersDataservice.js"></script>
+    <script src="ngApps/TechDesk/users/UsersListController.js"></script>
 
 
 </body>

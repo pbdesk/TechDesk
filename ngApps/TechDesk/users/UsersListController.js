@@ -1,7 +1,7 @@
 (function(){
 
   angular
-       .module('users')
+       .module('PBDesk.TechDesk.App')
        .controller('UsersListController', [
           'usersService', '$mdSidenav', '$mdBottomSheet', '$log',
           UsersListController
@@ -60,7 +60,7 @@
 
         $mdBottomSheet.show({
           parent: angular.element(document.getElementById('content')),
-          templateUrl: './ngApps/users/view/contactSheet.html',
+          templateUrl: './ngApps/TechDesk/users/contactSheet.html',
           controller: [ '$mdBottomSheet', UserSheetController],
           controllerAs: "vm",
           bindToController : true,
