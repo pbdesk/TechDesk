@@ -2,10 +2,10 @@
 	'use strict';
 
 	var coreApp = angular.module('PBDesk.TechDesk.Core', [
-		'ngAnimate', 'ngMaterial',
+		'ngAnimate', 'ngSanitize', 'ngMaterial',
 		'ngMdIcons',
 		'angular-data.DSCacheFactory', 'angular-loading-bar', 'ui.router',
-		 'PBDesk.Logger', 'PBDesk.Exception'
+		 'PBDesk.Logger', 'PBDesk.Exception', 'PBDesk.GoogleFeedFetcher'
 	]);
 				   
 

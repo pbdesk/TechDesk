@@ -29,19 +29,19 @@
         <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
             <md-list>
                 <md-item>
-                    <md-button class="md-primary">
+                    <md-button class="md-primary" ui-sref="Home">
                         <ng-md-icon icon="home" size="40" class="sidemenuicon"></ng-md-icon>
                         Home
                     </md-button>
                 </md-item>
                 <md-item>
-                    <md-button class="md-primary">
+                    <md-button class="md-primary" ui-sref="TechNews">
                         <ng-md-icon icon="info" size="40" class="sidemenuicon"></ng-md-icon>
                         TechNews
                     </md-button>
                 </md-item>
                 <md-item>
-                    <md-button class="md-primary">
+                    <md-button class="md-primary" ui-sref="eLearning">
                         <ng-md-icon icon="laptop" size="40" class="sidemenuicon"></ng-md-icon>
                         eLearning
                     </md-button>
@@ -70,6 +70,7 @@
                 <ng-md-icon icon="dashboard" ng-attr-style="fill: blue" style="fill: blue" size="28"></ng-md-icon>
                 <ng-md-icon icon="cloud" style="fill: red" size="64"></ng-md-icon>
             </div>
+            <div ui-view></div>
             <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
                 <md-icon md-svg-icon="share"></md-icon>
             </md-button>
@@ -79,6 +80,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
 
@@ -93,6 +95,8 @@
     <script src="ngApps/libs/my/Exception/Exception.js"></script>
     <script src="ngApps/libs/my/Exception/Exception.Handler.provider.js"></script>
 
+    <script src="ngApps/libs/my/GoogleFeedFetcher/GoogleFeedFetcher.js"></script>
+
     <script src="ngApps/Core/TechDesk.Core.module.js"></script>
     <script src="ngApps/Core/TechDesk.Core.config.js"></script>
 
@@ -104,6 +108,7 @@
    
     <script src="ngApps/TechDesk/TechDesk.module.js"></script>
     <script src="ngApps/TechDesk/TechDesk.config.js"></script>
+    <script src="ngApps/TechDesk/TechDesk.StateRoutes.js"></script>
 
 
 
