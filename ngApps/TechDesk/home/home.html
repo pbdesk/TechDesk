@@ -1,3 +1,194 @@
-﻿<div>
-    home.html
+﻿<div layout="column" tabindex="-1" role="main" flex="">
+	<md-toolbar class="md-default-theme md-accent md-hue-1">
+
+		<div class="md-toolbar-tools" >
+			
+
+			<div layout="row" flex="" class="fill-height">
+				<div class="md-toolbar-item md-breadcrumb">
+					<!-- ngIf: menu.currentPage.name !== menu.currentSection.name -->
+					<span class="md-breadcrumb-page ng-binding">Getting Started</span>
+				</div>
+
+				<span flex=""></span> <!-- use up the empty space -->
+				
+			</div>
+		</div>
+
+	</md-toolbar>
+
+	<!-- ngView:  --><md-content ng-view="" md-scroll-y="" flex="" class="md-padding ng-scope md-default-theme">
+		<div  layout="column" class="doc-content ng-scope">
+			<md-content class="extraPad md-default-theme">
+				<p><em>New to Angular.js? Before getting into Angular Material, it might be helpful to <a href="https://egghead.io/articles/new-to-angularjs-start-learning-here" target="_blank" title="Link opens in a new window">read about the framework</a>.</em></p>
+
+				<h2>How do I start?</h2>
+				<ul style="margin-bottom: 2em;">
+					<li><a href="http://codepen.io/collection/AxKKgY/" target="_blank" title="Link opens in a new window">Fork a Codepen</a></li>
+					<li><a href="https://github.com/angular/material-start" target="_blank" title="Link opens in a new window">Clone a Github Starter Project</a></li>
+				</ul>
+
+				<h3>Including Angular Material and its dependencies</h3>
+				<ul style="margin-bottom: 2em;">
+					<li><a href="https://github.com/angular/material#bower">Using Bower</a></li>
+					<li><a href="https://github.com/angular/material#cdn">Using a CDN</a> (example below)</li>
+				</ul>
+
+
+
+				<md-divider class="md-default-theme"></md-divider>
+
+				<h2>Contributing to Angular Material</h2>
+				<ul style="margin-bottom: 2em;">
+					<li>To contribute, fork our GitHub <a href="https://github.com/angular/material">repository</a>.</li>
+					<li>Please read our <a href="https://github.com/angular/material#contributing">contributor guidelines</a>.</li>
+					<li>
+						For problems,
+						<a href="https://github.com/angular/material/issues?q=is%3Aissue+is%3Aopen" target="_blank">
+							search the issues
+						</a> and/or
+						<a href="https://github.com/angular/material/issues/new" target="_blank">
+							create a new issue
+						</a>.
+					</li>
+					<li>
+						For questions,
+						<a href="https://groups.google.com/forum/#!forum/ngmaterial" target="_blank">
+							search the forum
+						</a> and/or post a new message.
+					</li>
+				</ul>
+
+				<section class="demo-container" ng-class="{'show-source': demoCtrl.$showSource}">
+
+					<md-toolbar class="demo-toolbar md-default-theme">
+						<div class="md-toolbar-tools">
+							<span class="ng-binding">Basic Usage</span>
+							<span flex=""></span>
+							
+						</div>
+					</md-toolbar>
+
+					<!-- Source views -->
+					<md-tabs style="border-top: solid 1px #00ADC3;" class="demo-source-tabs ng-isolate-scope md-default-theme ng-hide" ng-show="demoCtrl.$showSource" role="tablist" aria-hidden="true">
+						<section class="md-header" ng-class="{'md-paginating': pagination.active}">
+							<!-- ngIf: pagination.active && pagination.hasPrev --><div class="md-header-items-container" md-tabs-pagination="">
+								<div class="md-header-items">
+									<md-tabs-ink-bar></md-tabs-ink-bar>
+									<!-- ngRepeat: file in demoCtrl.orderedFiles --><md-tab ng-repeat="file in demoCtrl.orderedFiles" label="HTML" class="ng-scope ng-isolate-scope active md-tab-themed" id="tab_00S" role="tab" tabindex="0" aria-controls="content_tab_00S" aria-selected="true"><md-tab-label class="ng-binding ng-scope">HTML</md-tab-label></md-tab><!-- end ngRepeat: file in demoCtrl.orderedFiles --><md-tab ng-repeat="file in demoCtrl.orderedFiles" label="JS" class="ng-scope ng-isolate-scope md-tab-themed" id="tab_00T" role="tab" tabindex="-1" aria-controls="content_tab_00T"><md-tab-label class="ng-binding ng-scope">JS</md-tab-label></md-tab><!-- end ngRepeat: file in demoCtrl.orderedFiles --><md-tab ng-repeat="file in demoCtrl.orderedFiles" label="CSS" class="ng-scope ng-isolate-scope md-tab-themed" id="tab_00U" role="tab" tabindex="-1" aria-controls="content_tab_00U"><md-tab-label class="ng-binding ng-scope">CSS</md-tab-label></md-tab><!-- end ngRepeat: file in demoCtrl.orderedFiles -->
+								</div>
+							</div><!-- ngIf: pagination.active && pagination.hasNext -->
+						</section><section class="md-tabs-content">
+							<div class="md-tab-content ng-scope" id="content_tab_00S" role="tabpanel" aria-labelledby="tab_00S">
+								<md-content md-scroll-y="" class="demo-source-container md-default-theme">
+									<hljs code="file.contentsPromise" lang="html" should-interpolate="demoCtrl.interpolateCode">
+										<pre><code class="highlight" ng-non-bindable=""><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"AppCtrl"</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-card</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img/washedout.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Washed Out"</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-card-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Paracosm<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+		  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+		  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+										<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-card-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-card</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-card</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img/washedout.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Washed Out"</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-card-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Paracosm<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+		  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+		  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+										<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-card-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-card</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-card</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"img/washedout.png"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"Washed Out"</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">md-card-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Paracosm<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+										<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+		  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+		  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+										<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-card-content</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-card</span>&gt;</span>
+										<span class="hljs-tag">&lt;/<span class="hljs-title">md-content</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+									</hljs>
+
+								</md-content>
+							</div><div class="md-tab-content ng-hide ng-scope" id="content_tab_00T" role="tabpanel" aria-labelledby="tab_00T">
+								<md-content md-scroll-y="" class="demo-source-container md-default-theme">
+									<hljs code="file.contentsPromise" lang="js" should-interpolate="demoCtrl.interpolateCode">
+										<pre><code class="highlight" ng-non-bindable="">angular.module(<span class="hljs-string">'cardDemo1'</span>, [<span class="hljs-string">'ngMaterial'</span>])
+.controller(<span class="hljs-string">'AppCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($scope)</span> </span>{
+});</code></pre>
+									</hljs>
+
+								</md-content>
+							</div><div class="md-tab-content ng-hide ng-scope" id="content_tab_00U" role="tabpanel" aria-labelledby="tab_00U">
+								<md-content md-scroll-y="" class="demo-source-container md-default-theme">
+									<hljs code="file.contentsPromise" lang="css" should-interpolate="demoCtrl.interpolateCode">
+										<pre><code class="highlight" ng-non-bindable=""><span class="hljs-class">.carddemoBasicUsage</span> <span class="hljs-tag">md-card</span> <span class="hljs-rules">{
+										<span class="hljs-rule"><span class="hljs-attribute">min-height</span>:<span class="hljs-value"> <span class="hljs-number">150px</span></span></span>; <span class="hljs-rule">}</span></span></code></pre>
+									</hljs>
+
+								</md-content>
+							</div>
+						</section>
+					</md-tabs>
+
+					<!-- Live Demos -->
+					<demo-include files="demoCtrl.files" module="demoCtrl.demoModule" class="md-whiteframe-z1 carddemoBasicUsage">
+						<div class="demo-content cardDemo1 ng-scope">
+							<div >
+
+								<md-content class="md-default-theme">
+
+									<md-card class="md-default-theme">
+										<videogular vg-theme="vm.videoConfig.theme">
+											<vg-media vg-src="vm.videoConfig.sources">
+											</vg-media>
+											<vg-controls>
+												<vg-play-pause-button></vg-play-pause-button>
+												<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+												<vg-scrub-bar>
+													<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+												</vg-scrub-bar>
+												<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+												<vg-volume>
+													<vg-mute-button></vg-mute-button>
+													<vg-volume-bar></vg-volume-bar>
+												</vg-volume>
+												<vg-fullscreen-button></vg-fullscreen-button>
+											</vg-controls>
+
+											<vg-overlay-play></vg-overlay-play>
+											<vg-poster vg-url='vm.videoConfig.plugins.poster'></vg-poster>
+										</videogular>
+										<md-card-content>
+											<h2>Paracosm</h2>
+											<p>
+												The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+												two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+											</p>
+										</md-card-content>
+									</md-card>
+
+									
+
+									
+
+
+								</md-content>
+							</div>
+						</div>
+					</demo-include>
+				</section>
+			</md-content>
+		</div>
+	</md-content>
+
 </div>
