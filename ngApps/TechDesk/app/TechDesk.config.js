@@ -26,11 +26,12 @@
 
 	});
 
-	app.constant('TDParameters', {
+	app.constant('MainMenuItems', {
 		SideMenuItems: [
-			{ text: 'Home', icon: 'home' },
-			{ text: 'TechNews', icon: 'info' },
-			{ text: 'eLearning', icon: 'laptop' },
+			{ text: 'Home', icon: 'home', state:'Home' },
+			{ text: 'TechNews', icon: 'info', state: 'TechNews' },
+			{ text: 'eLearning', icon: 'laptop', state: 'eLearning' },
+			{ text: 'Channel9', icon: 'laptop', state: 'Channel9' }
 		]
 
 	});

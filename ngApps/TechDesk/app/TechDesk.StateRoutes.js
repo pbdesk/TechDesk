@@ -35,6 +35,13 @@
 			templateUrl: viewPath + "users/index.html",
 			controller: 'UsersListController',
 			controllerAs: 'ul'
+		})
+		.state('Channel9', {
+
+			url: '/Channel9',
+			templateUrl: viewPath + "C9/home/home.html",
+			controller: 'c9homeController',
+			controllerAs: 'C9'
 		});
 
 	}

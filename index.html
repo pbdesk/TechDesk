@@ -28,25 +28,12 @@
 
         <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="leftMain">
             <md-list>
-                <md-item>
-                    <md-button class="md-primary" ui-sref="Home">
-                        <ng-md-icon icon="home" size="40" class="sidemenuicon"></ng-md-icon>
-                        Home
-                    </md-button>
-                </md-item>
-                <md-item>
-                    <md-button class="md-primary" ui-sref="TechNews">
-                        <ng-md-icon icon="info" size="40" class="sidemenuicon"></ng-md-icon>
-                        TechNews
-                    </md-button>
-                </md-item>
-                <md-item>
-                    <md-button class="md-primary" ui-sref="eLearning">
-                        <ng-md-icon icon="laptop" size="40" class="sidemenuicon"></ng-md-icon>
-                        eLearning
-                    </md-button>
-                </md-item>
-
+				<md-item ng-repeat="menuItem in VM.mainSideMenuItems">
+					<md-button class="md-primary" ui-sref="{{menuItem.state}}">
+						<ng-md-icon icon="{{menuItem.icon}}" size="40" class="sidemenuicon"></ng-md-icon>
+						{{menuItem.text}}
+					</md-button>
+				</md-item>
             </md-list>
         </md-sidenav>
 
@@ -84,13 +71,16 @@
 
 
 
-    <script src="ngApps/TechDesk/TechDesk.module.js"></script>
-    <script src="ngApps/TechDesk/TechDesk.config.js"></script>
-    <script src="ngApps/TechDesk/TechDesk.StateRoutes.js"></script>
-    <script src="ngApps/TechDesk/TechDesk.RootController.js"></script>
+    <script src="ngApps/TechDesk/app/TechDesk.module.js"></script>
+    <script src="ngApps/TechDesk/app/TechDesk.config.js"></script>
+    <script src="ngApps/TechDesk/app/TechDesk.StateRoutes.js"></script>
+    <script src="ngApps/TechDesk/app/TechDesk.RootController.js"></script>
 
     <script src="ngApps/TechDesk/users/UsersDataservice.js"></script>
     <script src="ngApps/TechDesk/users/UsersListController.js"></script>
+
+	<script src="ngApps/TechDesk/C9/c9DataSvc.js"></script>
+	<script src="ngApps/TechDesk/C9/home/c9homeController.js"></script>
 
 
 </body>
